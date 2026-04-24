@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="en-GB"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>How the calculator works — UK Development Exit Finance Calculator</title><meta name="description" content="The cash-flow model, interest assumptions and refinance-break-even logic behind the UK Dev Exit Finance Calculator."><link rel="canonical" href="https://uk-dev-exit-finance-calculator.ondigitalocean.app/how-it-works"><meta property="og:type" content="website"><meta property="og:title" content="How the calculator works — UK Development Exit Finance Calculator"><meta property="og:description" content="The cash-flow model, interest assumptions and refinance-break-even logic behind the UK Dev Exit Finance Calculator."><meta property="og:url" content="https://uk-dev-exit-finance-calculator.ondigitalocean.app/how-it-works"><meta name="twitter:card" content="summary"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://uk-dev-exit-finance-calculator.ondigitalocean.app/#organization","name":"UK Dev Exit Calc","url":"https://uk-dev-exit-finance-calculator.ondigitalocean.app"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://uk-dev-exit-finance-calculator.ondigitalocean.app/#website","url":"https://uk-dev-exit-finance-calculator.ondigitalocean.app","name":"UK Development Exit Finance Calculator","description":"Work out the all-in cost of a UK development exit facility. Enter facility size, monthly rate, expected sales-period months and fees — see total cost, monthly interest, and when refinance beats exit finance.","publisher":{"@id":"https://uk-dev-exit-finance-calculator.ondigitalocean.app/#organization"},"inLanguage":"en-GB"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How the dev exit finance calculator works","description":"The model, assumptions and cash-flow logic behind the UK Development Exit Finance Calculator.","datePublished":"2026-04-24","dateModified":"2026-04-24","author":{"@type":"Person","name":"Olivia Chen, CA"},"publisher":{"@id":"https://uk-dev-exit-finance-calculator.ondigitalocean.app/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://uk-dev-exit-finance-calculator.ondigitalocean.app/how-it-works"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Calculator","item":"https://uk-dev-exit-finance-calculator.ondigitalocean.app"},{"@type":"ListItem","position":2,"name":"How it works","item":"https://uk-dev-exit-finance-calculator.ondigitalocean.app/how-it-works"}]}</script><link rel="stylesheet" href="/_astro/about.BKtb7NhO.css"></head> <body> <header class="site-header"> <div class="wrap"> <a class="wordmark" href="/"> <span class="wordmark__mark" aria-hidden="true"></span> <span> <span class="wordmark__primary">Dev Exit Calc</span> <span class="wordmark__secondary"> · UK</span> </span> </a> <nav aria-label="Primary"> <ul> <li><a href="/how-it-works">How it works</a></li><li><a href="/about">About</a></li> </ul> </nav> </div> </header> <main class="site-main"> <article class="wrap prose"> <p class="hero__eyebrow">Methodology</p> <h1 style="font-size: 2.2rem; letter-spacing: -0.02em; margin-bottom: 1rem;">
+How the calculator works
+</h1> <h2>The cost model</h2> <p>Dev exit finance cost is the sum of four components:</p> <ul> <li><strong>Monthly interest</strong> — <code>facility × monthly rate</code>, paid each month (serviced) or accrued to exit (rolled)</li> <li><strong>Arrangement fee</strong> — <code>facility × fee %</code>, charged at drawdown, typically 1–2%</li> <li><strong>Exit fee</strong> — <code>facility × fee %</code>, charged at repayment; increasingly rare on dev exit product</li> <li><strong>Legal + valuation</strong> — fixed £3–15k range depending on complexity; not included in the calculator because it varies so much</li> </ul> <h2>Serviced vs rolled</h2> <p>
+This calculator uses the <strong>serviced model</strong> — interest
+      paid monthly, no compounding. This matches how most UK developers
+      actually structure dev exit facilities once sales start generating
+      cash. Formula: <code>interest = facility × rate × months</code>.
+</p> <p>
+For a <strong>rolled-up model</strong>, multiply facility by
+<code>(1 + rate)^months − 1</code>. On a 9-month, 0.7% pm facility the
+      rolled cost is about 3% higher than serviced — the difference grows
+      non-linearly with time.
+</p> <h2>The refinance comparison</h2> <p>
+Some sales periods run longer than expected and a term refinance would
+      be cheaper than running dev exit indefinitely. The comparison uses:
+</p> <p> <code>refi cost = facility × annual rate × (months / 12) + fixed costs</code> </p> <p>
+Fixed costs default to £45k (arrangement + legals on a typical £3m
+      commercial term mortgage). Below 6 months, dev exit usually wins;
+      above 12 months, refi usually does.
+</p> <h2>Assumptions baked into the calculator</h2> <ul> <li>Monthly interest is flat over the term (no step-down if units sell early)</li> <li>Arrangement fee is deducted from the facility at drawdown</li> <li>No break cost if you exit early (most UK dev exit products have no ERC)</li> <li>Refi cost is flat — no early repayment on the refi itself</li> </ul> <h2>What the calculator doesn't model</h2> <p>
+Partial drawdowns, amortisation as units sell, interest-rate step-ups
+      on extension, penalty interest if you breach sales covenants, and
+      stamp duty on any refinance. These can meaningfully change the answer
+      on edge cases. For a deal-specific model, consult a broker or cash
+      flow advisor.
+</p> <h2>Author</h2> <p>
+Calculator designed and maintained by <strong>Olivia Chen, CA</strong>,
+ cash flow analyst for property developers. Olivia is a qualified chartered accountant working with UK property developers on cash flow modelling through the sales period. Specialises in worked examples and break-even analysis. </p> </article> </main> <footer class="site-footer"> <div class="wrap"> <nav class="site-footer__network" aria-label="Related resources"> <p class="site-footer__label">Elsewhere in the network</p> <ul> <li><a rel="noopener">UK Development Exit Finance Playbook</a></li><li><a rel="noopener">dev exit worked examples</a></li> </ul> </nav> <p>
+Calculator and cash-flow modelling by <strong>Olivia Chen, CA</strong>,
+ cash flow analyst for property developers. Independent — not a broker or lender.
+          Figures are indicative; always validate with a qualified advisor before committing
+          to finance.
+</p> <p style="margin-top: 0.5rem;">
+For live indicative terms on a UK scheme nearing practical completion, developers
+            often work with  <a href="https://www.constructioncapital.co.uk/services/development-exit-finance" rel="noopener">Construction Capital</a>.
+</p> </div> </footer> </body></html>

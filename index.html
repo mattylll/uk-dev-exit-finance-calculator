@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="en-GB"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>UK Development Exit Finance Calculator</title><meta name="description" content="Work out the all-in cost of a UK development exit facility. Enter facility size, monthly rate, expected sales-period months and fees — see total cost, monthly interest, and when refinance beats exit finance."><link rel="canonical" href="https://uk-dev-exit-finance-calculator.ondigitalocean.app/"><meta property="og:type" content="website"><meta property="og:title" content="UK Development Exit Finance Calculator"><meta property="og:description" content="Work out the all-in cost of a UK development exit facility. Enter facility size, monthly rate, expected sales-period months and fees — see total cost, monthly interest, and when refinance beats exit finance."><meta property="og:url" content="https://uk-dev-exit-finance-calculator.ondigitalocean.app/"><meta name="twitter:card" content="summary"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://uk-dev-exit-finance-calculator.ondigitalocean.app/#organization","name":"UK Dev Exit Calc","url":"https://uk-dev-exit-finance-calculator.ondigitalocean.app"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://uk-dev-exit-finance-calculator.ondigitalocean.app/#website","url":"https://uk-dev-exit-finance-calculator.ondigitalocean.app","name":"UK Development Exit Finance Calculator","description":"Work out the all-in cost of a UK development exit facility. Enter facility size, monthly rate, expected sales-period months and fees — see total cost, monthly interest, and when refinance beats exit finance.","publisher":{"@id":"https://uk-dev-exit-finance-calculator.ondigitalocean.app/#organization"},"inLanguage":"en-GB"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"UK Development Exit Finance Calculator","description":"Work out the all-in cost of a UK development exit facility. Enter facility size, monthly rate, expected sales-period months and fees — see total cost, monthly interest, and when refinance beats exit finance.","datePublished":"2026-04-24","dateModified":"2026-04-24","author":{"@type":"Person","name":"Olivia Chen, CA"},"publisher":{"@id":"https://uk-dev-exit-finance-calculator.ondigitalocean.app/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://uk-dev-exit-finance-calculator.ondigitalocean.app/"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is development exit finance cost calculated?","acceptedAnswer":{"@type":"Answer","text":"Dev exit cost is monthly interest × months of facility + arrangement fee + exit fee + legals. Our calculator computes all of these and shows the all-in figure. The key variables are the monthly rate (typically 0.55–0.85% pm on regulated cases, 0.59–1.10% on non-regulated) and the sales-period length — long sales periods compound the cost."}},{"@type":"Question","name":"When does development exit finance beat refinancing?","acceptedAnswer":{"@type":"Answer","text":"When the sales-period is short enough that the monthly rate × months < arrangement + legals on a term refinance. Typical break-even is around 6–8 months. Under that, exit finance usually wins; over 12 months, a term refi is often cheaper."}},{"@type":"Question","name":"What does \"serviced\" vs \"rolled\" mean in this context?","acceptedAnswer":{"@type":"Answer","text":"Serviced = interest paid monthly from sales proceeds as units complete. Rolled = interest accrues and is paid at exit (facility repayment). Most dev exit lenders offer both. Serviced is cheaper overall (no compounding) but requires ongoing cash flow."}},{"@type":"Question","name":"What LTV do UK dev exit lenders typically offer?","acceptedAnswer":{"@type":"Answer","text":"Up to 75% LTV on the completed scheme's GDV is the mainstream range. A few lenders stretch to 80% on prime stock. Below 60% LTV, pricing comes down materially — the lender views the facility as low-risk."}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"UK Development Exit Finance Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"},"url":"https://uk-dev-exit-finance-calculator.ondigitalocean.app","description":"Work out the all-in cost of a UK development exit facility. Enter facility size, monthly rate, expected sales-period months and fees — see total cost, monthly interest, and when refinance beats exit finance."}</script><link rel="stylesheet" href="/_astro/about.BKtb7NhO.css"></head> <body> <header class="site-header"> <div class="wrap"> <a class="wordmark" href="/"> <span class="wordmark__mark" aria-hidden="true"></span> <span> <span class="wordmark__primary">Dev Exit Calc</span> <span class="wordmark__secondary"> · UK</span> </span> </a> <nav aria-label="Primary"> <ul> <li><a href="/how-it-works">How it works</a></li><li><a href="/about">About</a></li> </ul> </nav> </div> </header> <main class="site-main"> <div class="wrap"> <section class="hero"> <p class="hero__eyebrow">UK dev exit finance · sales-period cost modelling</p> <h1>Development exit finance, costed.</h1> <p class="hero__lede">
+Enter the facility size, monthly rate, expected sales-period months
+        and fees. Returns all-in cost, monthly interest, and a break-even
+        check against a term refinance. Calculates in your browser — no
+        call-back required.
+</p> </section> <div class="calc" id="calc"> <div class="calc__inputs"> <label class="calc__field"> <span class="calc__field-label"> <span>Facility size</span> <span class="calc__field-hint" id="facility-hint">£0</span> </span> <input type="number" id="facility" min="0" step="50000" value="3000000" inputmode="numeric"> </label> <label class="calc__field"> <span class="calc__field-label"> <span>Monthly rate (%)</span> <span class="calc__field-hint" id="rate-hint">0.00%</span> </span> <input type="number" id="rate" min="0" step="0.01" value="0.70" inputmode="decimal"> </label> <label class="calc__field"> <span class="calc__field-label"> <span>Expected sales-period (months)</span> <span class="calc__field-hint" id="term-hint">0</span> </span> <input type="number" id="term" min="1" step="1" value="9" inputmode="numeric"> </label> <label class="calc__field"> <span class="calc__field-label"><span>Arrangement fee (%)</span></span> <input type="number" id="arr" min="0" step="0.1" value="1.5" inputmode="decimal"> </label> <label class="calc__field"> <span class="calc__field-label"><span>Exit fee (%)</span></span> <input type="number" id="exit" min="0" step="0.1" value="0" inputmode="decimal"> </label> <label class="calc__field"> <span class="calc__field-label"> <span>Refi comparison — term loan rate (% p.a.)</span> </span> <input type="number" id="refi-rate" min="0" step="0.1" value="7.5" inputmode="decimal"> </label> <label class="calc__field"> <span class="calc__field-label"> <span>Refi fixed costs (arrangement + legal)</span> </span> <input type="number" id="refi-fixed" min="0" step="1000" value="45000" inputmode="numeric"> </label> </div> <div class="calc__outputs"> <div class="calc__out-label">Dev exit: all-in cost</div> <div class="calc__out-value" id="total">£—</div> <div class="calc__out-row"><span>Monthly interest (serviced)</span><span id="monthly">£—</span></div> <div class="calc__out-row"><span>Total interest over term</span><span id="interest">£—</span></div> <div class="calc__out-row"><span>Arrangement fee</span><span id="arr-out">£—</span></div> <div class="calc__out-row"><span>Exit fee</span><span id="exit-out">£—</span></div> <div class="calc__out-row calc__out-row--total"><span>All-in cost vs facility</span><span id="pct">—%</span></div> <div class="calc__out-row" style="margin-top:1rem;"><span>Refi comparison total</span><span id="refi-total">£—</span></div> <div class="verdict verdict--exit" id="verdict">—</div> </div> </div> <section class="prose"> <h2>How the numbers work</h2> <p>
+A UK development exit facility is a short-term loan taken out when a
+        scheme reaches practical completion and the developer is selling the
+        units (or refinancing to term). It replaces the senior development
+        loan, which typically has higher rates and tighter covenants because
+        its risk profile assumes construction risk — once that's gone, the
+        cost of capital should come down.
+</p> <h3>What the calculator does</h3> <ul> <li>Interest is calculated monthly (serviced model — most lenders allow either serviced or rolled; rolled is more expensive due to compounding, approximately equal to <code>loan × ((1+rate)^months - 1)</code> instead of <code>loan × rate × months</code>).</li> <li>Arrangement fee defaults to 1.5% of facility, charged at drawdown.</li> <li>Exit fee is 0% by default — increasingly rare on dev exit product; some lenders still charge 0.5–1%.</li> <li>The refi comparison uses <code>facility × annual rate × (months / 12) + fixed costs</code>.</li> </ul> <h3>Break-even intuition</h3> <blockquote>
+At 0.70% pm and 9 months, a £3m facility pays ~£189k in interest plus
+        £45k arrangement = <strong>£234k all-in</strong>. A 7.5% p.a. term
+        refinance over the same 9 months would cost ~£169k + £45k fixed =
+        £214k. So on 9 months, refinance wins by £20k. At 5 months or less,
+        exit finance almost always wins — at 12+ months, refi usually does.
+        The calculator does this sum live.
+</blockquote> <h2>Related across the network</h2> <ul> <li>The <a href="/how-it-works">how it works</a> page walks through the inputs and outputs in more detail.</li> <li>Our <a href="https://uk-dev-exit-finance-playbook.neocities.org">Dev Exit Finance Playbook</a> covers when to switch from senior debt, covenants and lender selection.</li> <li>Anonymised <a href="https://uk-dev-exit-case-studies.b-cdn.net">case studies</a> show real-shape numbers on six completed schemes.</li> </ul> <h2>FAQ</h2> <div class="faq"> <details> <summary>How is development exit finance cost calculated?</summary> <p>Dev exit cost is monthly interest × months of facility + arrangement fee + exit fee + legals. Our calculator computes all of these and shows the all-in figure. The key variables are the monthly rate (typically 0.55–0.85% pm on regulated cases, 0.59–1.10% on non-regulated) and the sales-period length — long sales periods compound the cost.</p> </details><details> <summary>When does development exit finance beat refinancing?</summary> <p>When the sales-period is short enough that the monthly rate × months &lt; arrangement + legals on a term refinance. Typical break-even is around 6–8 months. Under that, exit finance usually wins; over 12 months, a term refi is often cheaper.</p> </details><details> <summary>What does &quot;serviced&quot; vs &quot;rolled&quot; mean in this context?</summary> <p>Serviced = interest paid monthly from sales proceeds as units complete. Rolled = interest accrues and is paid at exit (facility repayment). Most dev exit lenders offer both. Serviced is cheaper overall (no compounding) but requires ongoing cash flow.</p> </details><details> <summary>What LTV do UK dev exit lenders typically offer?</summary> <p>Up to 75% LTV on the completed scheme&#39;s GDV is the mainstream range. A few lenders stretch to 80% on prime stock. Below 60% LTV, pricing comes down materially — the lender views the facility as low-risk.</p> </details> </div> </section> </div> <script>
+    (function () {
+      const $ = (id) => document.getElementById(id);
+      const ids = ["facility","rate","term","arr","exit","refi-rate","refi-fixed"];
+      const inputs = Object.fromEntries(ids.map((i) => [i, $(i)]));
+      const out = {
+        total: $("total"), monthly: $("monthly"), interest: $("interest"),
+        arr: $("arr-out"), exit: $("exit-out"), pct: $("pct"),
+        refiTotal: $("refi-total"), verdict: $("verdict"),
+        facilityHint: $("facility-hint"), rateHint: $("rate-hint"), termHint: $("term-hint"),
+      };
+      const fmt = (n) => "£" + Math.round(n).toLocaleString("en-GB");
+      function recalc() {
+        const facility = +inputs.facility.value || 0;
+        const rate = (+inputs.rate.value || 0) / 100;
+        const months = +inputs.term.value || 0;
+        const arr = (+inputs.arr.value || 0) / 100;
+        const exitFee = (+inputs["exit"].value || 0) / 100;
+        const refiRate = (+inputs["refi-rate"].value || 0) / 100;
+        const refiFixed = +inputs["refi-fixed"].value || 0;
+
+        const interest = facility * rate * months;
+        const arrFee = facility * arr;
+        const exitFeeAmt = facility * exitFee;
+        const allIn = interest + arrFee + exitFeeAmt;
+
+        const refiInterest = facility * refiRate * (months / 12);
+        const refiTotal = refiInterest + refiFixed;
+
+        out.total.textContent = fmt(allIn);
+        out.monthly.textContent = fmt(facility * rate);
+        out.interest.textContent = fmt(interest);
+        out.arr.textContent = fmt(arrFee);
+        out.exit.textContent = fmt(exitFeeAmt);
+        out.pct.textContent = facility > 0 ? ((allIn / facility) * 100).toFixed(2) + "%" : "—%";
+        out.refiTotal.textContent = fmt(refiTotal);
+        out.facilityHint.textContent = fmt(facility);
+        out.rateHint.textContent = (rate * 100).toFixed(2) + "%";
+        out.termHint.textContent = months + "m";
+
+        if (allIn < refiTotal) {
+          out.verdict.className = "verdict verdict--exit";
+          out.verdict.textContent = `Dev exit wins by ${fmt(refiTotal - allIn)} over ${months} months.`;
+        } else {
+          out.verdict.className = "verdict verdict--refi";
+          out.verdict.textContent = `Term refinance wins by ${fmt(allIn - refiTotal)} over ${months} months.`;
+        }
+      }
+      ids.forEach((i) => inputs[i].addEventListener("input", recalc));
+      recalc();
+    })();
+  </script> </main> <footer class="site-footer"> <div class="wrap"> <nav class="site-footer__network" aria-label="Related resources"> <p class="site-footer__label">Elsewhere in the network</p> <ul> <li><a rel="noopener">dev exit finance practitioner&#39;s guide</a></li><li><a rel="noopener">UK Development Exit Finance Case Studies</a></li> </ul> </nav> <p>
+Calculator and cash-flow modelling by <strong>Olivia Chen, CA</strong>,
+ cash flow analyst for property developers. Independent — not a broker or lender.
+          Figures are indicative; always validate with a qualified advisor before committing
+          to finance.
+</p> <p style="margin-top: 0.5rem;">
+For live indicative terms on a UK scheme nearing practical completion, developers
+            often work with  <a href="https://www.constructioncapital.co.uk/services/development-exit-finance" rel="noopener">development exit finance</a>.
+</p> </div> </footer> </body></html>
